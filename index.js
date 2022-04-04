@@ -179,45 +179,7 @@ const main = async () =>
                         child.stdin.end();
 
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
-                      if (type == 'trad') {
-                          let playbackLogDir = projectdir + "_logs";
-                          console.log("Playback log directory is " + playbackLogDir);
-                          if (fs.existsSync(fResultFile)) {
-                            var verdictRegex = /--VERDICT=(.*)/;
-                            var publishedResultRegex = /--REMOTE_RESULT_UI=(.*)/;
-                            var isVerdictSet = false;
-                            var isPublishedResultSet = false;
-                            var ftResult;
-                            var publishedResult;
-                            var data = fs.readFileSync(fResultFile, 'utf-8').split('\n');
-                            for(let line of data){
-                              if (!isVerdictSet && verdictRegex.test(line)) {
-                                ftResult = verdictRegex.exec(line);
-                                console.log("Test Result is: "+ftResult[1]);
-                                isVerdictSet = true;
-                              }
-                              else if(!isPublishedResultSet && publishedResultRegex.test(line)){
-                                publishedResult = publishedResultRegex.exec(line);
-                                console.log("Published Result : "+publishedResult[1]);
-                                isPublishedResultSet = true;
-                              }
-                              if(isVerdictSet && isPublishedResultSet)
-                                break;
-                            }
-                            if(!isVerdictSet){
-                              console.log("Test Result is: FAIL");
-                              core.setFailed("Test Result is: FAIL");
-                            }
-                            stderrFailure = false;
-                            if(ftResult[1]=="Fail" || ftResult[1]=="ERROR"){
-                              execStatus=true
-                            }
-                          }
-                          else{
-                              console.log("Result file does not exist");
-                          }
-                      }
-                      else {
+                      
                           if (fs.existsSync(fResultFile)) {
                               var verdictRegex = /--VERDICT=(INCONCLUSIVE|ERROR|PASS|FAIL).*/
                               var serverRegex = /--PUBLISH_URL=(.*)/;
@@ -268,7 +230,7 @@ const main = async () =>
                               console.log("Test Result is: FAIL");
                               core.setFailed("Test Result is: FAIL");
                           }
-                      }
+                      
                       console.log("");
                     }  
           
