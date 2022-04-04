@@ -156,7 +156,7 @@ const main = async () =>
                       
 
                       let tempDir = os.tmpdir();
-                      let filePath = path.join(tempDirectory, uuidV4() + '.ps1');
+                      let filePath = path.join(tempDir, suite + '.ps1');
                         await fs.writeFileSync(
                                 filePath,
                                 script, 
