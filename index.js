@@ -179,8 +179,10 @@ const main = async () =>
                         child.stdin.end();
 
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
-                      
+                        var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
+                      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
                           if (fs.existsSync(fResultFile)) {
+                            console.log("@@@@@@@@@@@@@@@@@@@@@@@ inside if");
                               var verdictRegex = /--VERDICT=(INCONCLUSIVE|ERROR|PASS|FAIL).*/
                               var serverRegex = /--PUBLISH_URL=(.*)/;
                               var reportRegex = /--REPORT=(.*)[|]--URL=(.*)/;
