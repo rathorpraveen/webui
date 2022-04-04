@@ -164,18 +164,7 @@ const main = async () =>
                         
                         console.log(script);
                         console.log('========================== Starting Command Output ===========================');
-                       // var spawn = require("child_process").spawn,child;
-                       // child = spawn("powershell.exe",[filePath]);
-                       // child.stdout.on("data",function(data){
-                       //     console.log("Powershell Data: " + data);
-                       // });
-                       // child.stderr.on("data",function(data){
-                       //     console.log("Powershell Errors: " + data);
-                        //    core.setFailed(data);
-                        //});
-                       // child.on("exit",function(){
-                        //    console.log("Powershell Script finished");
-                       // });
+                       
 
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
                         
