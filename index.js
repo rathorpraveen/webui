@@ -176,10 +176,9 @@ const main = async () =>
                         child.on("exit",function(){
                             console.log("Powershell Script finished");
                         });
-                        child.stdin.end();
 
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
-                        var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
+                        
                       console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
                           if (fs.existsSync(fResultFile)) {
                             console.log("@@@@@@@@@@@@@@@@@@@@@@@ inside if");
