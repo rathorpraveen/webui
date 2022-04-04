@@ -9,7 +9,7 @@ jobs:
     name: Execute Web-Ui Test
     steps:
       - name: Execute test
-        uses: rathorpraveen/HOTUI@main
+        uses: rathorpraveen/webui@main
         with:
           productpath: C:\Program Files\HCL\HCLOneTestfresh
           imshared: C:\Program Files\HCL\HCLIMShared  
