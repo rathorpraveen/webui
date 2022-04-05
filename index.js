@@ -22,6 +22,7 @@ const main = async () =>
                         const workspace = core.getInput('workspace',{required: false});
                         const project  = core.getInput('project',{required: false});
                         const suite  = core.getInput('suite',{required: false});
+                        const labels  = core.getInput('labels',{required: false});
                         const varfile = core.getInput('varfile',{required: false});
                         const swapdatasets = core.getInput('swapdatasets',{required: false});
                         const configfile  = core.getInput('configfile',{required: false});
