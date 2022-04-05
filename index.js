@@ -86,67 +86,67 @@ const main = async () =>
                               {
                                 script = script.concat(' -suite '+'"'+ suite +'"')
                               }
-                              if(labels != null)
+                              if(labels)
                               {
                                   script = script.concat(' -labels '+'"'+ labels +'"')
                               }
-                              if(varfile != null)
+                              if(varfile)
                               {
                                   script = script.concat(' -varfile '+'"'+ varfile +'"')
                               }
-                              if(swapdatasets != null)
+                              if(swapdatasets)
                               {
                                   script = script.concat(' -swapdatasets '+'"'+ swapdatasets +'"')
                               }
-                              if(results !=null) 
+                              if(results) 
                               {
                                   script = script.concat(' -results '+'"'+ results +'"')
                               }	
-                              if(overwrite !=null) 
+                              if(overwrite) 
                               {
                                   script = script.concat(' -overwrite '+'"'+ overwrite +'"')
                               }
-                              if(exportstats !=null) 
+                              if(exportstats) 
                               {
                                   script = script.concat(' -exportstats '+'"'+ exportstats +'"')
                               }
-                              if(exportstatreportlist !=null) 
+                              if(exportstatreportlist) 
                               {
                                   script = script.concat(' -exportstatreportlist '+'"'+ exportstatreportlist +'"')
                               }
-                              if(exportstatshtml !=null) 
+                              if(exportstatshtml) 
                               {
                                   script = script.concat(' -exportstatshtml '+'"'+ exportstatshtml +'"')
                               }
-                              if(usercomments !=null) 
+                              if(usercomments) 
                               {
                                   script = script.concat(' -usercomments '+'"'+ usercomments +'"')
                               }
-                              if(protocolinput !=null) 
+                              if(protocolinput) 
                               {
                                   script = script.concat(' -protocolinput '+'"'+ protocolinput +'"')
                               }
-                              if(exportreport !=null) 
+                              if(exportreport) 
                               {
                                   script = script.concat(' -exportReport '+'"'+ exportreport +'"')
                               }
-                              if(imports !=null) 
+                              if(imports) 
                               {
                                   script = script.concat(' -import '+'"'+ imports +'"')
                               }
-                              if(exportstatsformat !=null) 
+                              if(exportstatsformat) 
                               {
                                   script = script.concat(' -exportstatsformat '+'"'+ exportstatsformat +'"')
                               }
-                              if(publish !=null)
+                              if(publish)
                               {
                                   script = script.concat(' -publish '+'"'+ publish +'"')
                               }
-                              if(publish_for !=null) 
+                              if(publish_for) 
                               {
                                   script = script.concat(' -publish_for '+'"'+ publish_for +'"')
                               }
-                              if(publishreports !=null) 
+                              if(publishreports) 
                               {
                                   script = script.concat(' -publishreports '+'"'+ publishreports +'"')
                               }
@@ -176,7 +176,7 @@ const main = async () =>
                         });
                         child.stdin.end();
                         
-                        var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
+                        var fResultFile = tempDir + path.sep + "CommandLineLog.txt"; 
                         
                       console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
                           if (fs.existsSync(fResultFile)) {
