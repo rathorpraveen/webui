@@ -38,7 +38,8 @@ const main = async () =>
                         const publish = core.getInput('publish',{required: false});
                         const publish_for  = core.getInput('publish_for',{required: false});
                         const publishreports  = core.getInput('publishreports',{required: false});
-                          if(configfile != null)
+                        console.log("Config file is %%%%%%%%%%%%%%%%%%%%%%555 "+configfile+"&&&&&&&&&&&&&&&&&&&");
+                          if(configfile)
                             {  
                               if (process.platform == 'linux')
                                   {
@@ -177,6 +178,7 @@ const main = async () =>
                             console.log("Powershell Script finished");
                         });
                         child.stdin.end();
+                        let tempDir = os.tmpdir();
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
                         
                       console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
