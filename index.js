@@ -173,11 +173,10 @@ const main = async () =>
                         });
                         child.on("exit",function(){
                             console.log("Powershell Script finished");
+                            process.exit();
                         });
                         child.stdin.end();
-                        child.on('exit', function() {
-                          process.exit()
-                        });
+                        
                         
                         var fResultFile = tempDir + path.sep + "CommandLineLog.txt"; 
                         
