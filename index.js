@@ -34,7 +34,7 @@ const main = async () =>
                         const usercomments = core.getInput('usercomments',{required: false});
                         const protocolinput = core.getInput('protocolinput',{required: false});
                         const exportreport  = core.getInput('exportreport',{required: false});
-                        const imports  = core.getInput('suite',{imports: false});
+                        const imports  = core.getInput('imports',{imports: false});
                         const exportstatsformat = core.getInput('exportstatsformat',{required: false});
                         const publish = core.getInput('publish',{required: false});
                         const publish_for  = core.getInput('publish_for',{required: false});
