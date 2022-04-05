@@ -178,7 +178,7 @@ const main = async () =>
                             console.log("Powershell Script finished");
                         });
                         child.stdin.end();
-                        let tempDir = os.tmpdir();
+                        
                         var fResultFile = tmpdir + path.sep + "CommandLineLog.txt"; 
                         
                       console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
