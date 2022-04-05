@@ -164,6 +164,7 @@ const main = async () =>
                         console.log('========================== Starting Command Output ===========================');
                         var spawn = require("child_process").spawn,child;
                         child =  spawn("powershell.exe",[filePath]);
+                        child.stdout.pipe(process.stdout);
                         child.stdout.on("data",function(data){
                             console.log("Powershell Data: " + data);
                         });
