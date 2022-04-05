@@ -85,10 +85,6 @@ const main = async () =>
                               {
                                 script = script.concat(' -suite '+'"'+ suite +'"')
                               }
-                              if(vmargs != null)
-                              {
-                              script = script.concat(' -vmargs '+'"'+ vmargs +'"')
-                              }	
                               if(labels != null)
                               {
                                   script = script.concat(' -labels '+'"'+ labels +'"')
