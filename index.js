@@ -4,8 +4,6 @@ const path = require("path");
 
 const os = require('os');
 const fs = require('fs');
-//var uuidV4 = require('uuid/v4');
-//const { v4: uuidv4 } = require('uuid');
 
 const main = async () => 
 {
@@ -164,7 +162,9 @@ const main = async () =>
                         console.log('========================== Starting Command Output ===========================');
                         var spawn = require("child_process").spawn,child;
                         child =  spawn("powershell.exe",[filePath]);
-                        child.stdout.pipe(process.stdout);
+                        await new Promise( (resolve) => {
+                          child.on('close', resolve)
+                        });
                         child.stdout.on("data",function(data){
                             console.log("Powershell Data: " + data);
                         });
@@ -181,9 +181,9 @@ const main = async () =>
                         
                         var fResultFile = tempDir + path.sep + "CommandLineLog.txt"; 
                         
-                      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@log file location "+fResultFile);
+                      
                           if (fs.existsSync(fResultFile)) {
-                            console.log("@@@@@@@@@@@@@@@@@@@@@@@ inside if");
+                            
                               var verdictRegex = /--VERDICT=(INCONCLUSIVE|ERROR|PASS|FAIL).*/
                               var serverRegex = /--PUBLISH_URL=(.*)/;
                               var reportRegex = /--REPORT=(.*)[|]--URL=(.*)/;
