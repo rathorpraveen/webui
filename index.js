@@ -37,7 +37,6 @@ const main = async () =>
                         const publish = core.getInput('publish',{required: false});
                         const publish_for  = core.getInput('publish_for',{required: false});
                         const publishreports  = core.getInput('publishreports',{required: false});
-                        console.log("Config file is %%%%%%%%%%%%%%%%%%%%%%555 "+configfile+"&&&&&&&&&&&&&&&&&&&");
                           if(configfile)
                             {  
                               if (process.platform == 'linux')
@@ -163,10 +162,10 @@ const main = async () =>
                         var spawn = require("child_process").spawn,child;
                         child =  spawn("powershell.exe",[filePath]);
                         child.stdout.on("data",function(data){
-                            console.log("Powershell Data: " + data);
+                            console.log(" " + data);
                         });
                         child.stderr.on("data",function(data){
-                            console.log("Powershell Errors: " + data);
+                            console.log("Errors: " + data);
                             core.setFailed(data);
                         });
                         child.on("exit",function(){
