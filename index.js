@@ -162,9 +162,6 @@ const main = async () =>
                         console.log('========================== Starting Command Output ===========================');
                         var spawn = require("child_process").spawn,child;
                         child =  spawn("powershell.exe",[filePath]);
-                        await new Promise( (resolve) => {
-                          child.on('close', resolve)
-                        });
                         child.stdout.on("data",function(data){
                             console.log("Powershell Data: " + data);
                         });
@@ -174,7 +171,10 @@ const main = async () =>
                         });
                         child.on("exit",function(){
                             console.log("Powershell Script finished");
-                            process.exit();
+                           
+                        });
+                        await new Promise( (resolve) => {
+                          child.on('close', resolve)
                         });
                         child.stdin.end();
                         
