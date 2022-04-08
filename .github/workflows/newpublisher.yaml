@@ -1,0 +1,43 @@
+Skip to content
+Search or jump to…
+Pulls
+Issues
+Marketplace
+Explore
+ 
+@rathorpraveen 
+rathorpraveen
+/
+webui
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+More
+webui/.github/workflows/HOT-Webui.yaml
+@rathorpraveen
+rathorpraveen Update HOT-Webui.yaml
+Latest commit a483de1 5 minutes ago
+ History
+ 1 contributor
+34 lines (26 sloc)  779 Bytes
+   
+name: Publish junit Action
+
+on: workflow_dispatch
+
+jobs:
+
+  WEBUI-Action:
+    runs-on: t2
+    name: publish junit Test
+    steps:
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v3
+        if: always() # always run even if the previous step fails
+        with:  C:/Data/zphyrscript/results/*.xml
+          report_paths: 'C:/Data/zphyrscript/results/TEST-*.xml'
