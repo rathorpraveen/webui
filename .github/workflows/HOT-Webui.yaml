@@ -8,6 +8,11 @@ jobs:
     runs-on: t2
     name: Execute Web-Ui Test
     steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+           python-version: 3.8
+    
       - name: Upload Unit Test Results
         if: always()
         uses: actions/upload-artifact@v2
