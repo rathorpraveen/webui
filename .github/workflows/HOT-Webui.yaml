@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: 3.8
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.31
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
         if: always()
         with:
             files: "C:/Data/zphyrscript/results/*.xml"
